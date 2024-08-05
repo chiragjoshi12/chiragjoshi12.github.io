@@ -220,6 +220,11 @@ body {
     font-size: 90%
 }
 
+.about p {
+    font-size: 1.01em;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 em {
     font-style: italic
 }
