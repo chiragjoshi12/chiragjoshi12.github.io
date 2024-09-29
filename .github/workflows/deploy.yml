@@ -1,5 +1,6 @@
 name: Build and Deploy
 on: [push]
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -10,5 +11,5 @@ jobs:
       - name: Deploy
         uses: kamranahmedse/github-pages-blog-action@v0.0.10
         with:
-          branch: gh-pages # Optional branch for GitHub Pages
-
+          branch: gh-pages
+          token: ${{ secrets.GH_TOKEN }}  # Use the new secret
