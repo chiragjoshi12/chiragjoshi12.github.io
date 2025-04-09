@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fff;
+  --foreground: #171717;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--source-serif-font), Georgia, serif;
+}
+
+/* Elements marked with serif class or font-serif will use Source Serif */
+.font-serif,
+.serif {
+  font-family: ui-serif,var(--font-pt-serif),var(--font-noto-serif), Georgia,
+  serif;
+}
+
+/* Elements marked with sans or font-sans will use Geist */
+.font-sans,
+.sans {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+@layer base {
+  .prose {
+    @apply text-zinc-700 leading-relaxed text-lg max-w-none;
+  }
+
+  .prose h1 {
+    @apply font-serif text-3xl font-bold text-zinc-800 mt-8 mb-4;
+  }
+
+  .prose h2 {
+    @apply font-serif text-2xl font-semibold text-zinc-800 mt-7 mb-3 border-b border-zinc-200 pb-2;
+  }
+
+  .prose h3 {
+    @apply font-serif text-xl font-medium text-zinc-800 mt-6 mb-2;
+  }
+
+  .prose p {
+    @apply my-4 text-lg;
+  }
+
+  .prose strong {
+    @apply font-semibold text-zinc-900;
+  }
+
+  .prose blockquote {
+    @apply pl-4 italic border-l-4 border-zinc-300 text-zinc-600 my-6;
+  }
+
+  .prose a {
+    @apply text-blue-600 hover:text-blue-800 underline underline-offset-2 decoration-blue-300 font-medium;
+  }
+
+  .prose img {
+    @apply rounded-lg shadow-md my-6 mx-auto;
+  }
+
+  /* Code block styling */
+  .prose pre {
+    @apply bg-zinc-900 text-zinc-100 rounded-lg p-4 my-6 overflow-x-auto;
+  }
+
+  .prose :where(code):not(:where([class~="not-prose"], pre *)) {
+    @apply bg-zinc-100 text-zinc-700 rounded-md px-1.5 py-0.5 font-mono text-sm;
+  }
+
+  /* Lists styling */
+  .prose ul {
+    @apply list-disc pl-6 my-4 space-y-2;
+  }
+
+  .prose ol {
+    @apply list-decimal pl-6 my-4 space-y-2;
+  }
+
+  /* Table styling */
+  .prose table {
+    @apply w-full my-6 border-collapse;
+  }
+
+  .prose th {
+    @apply bg-zinc-100 p-2 border border-zinc-300 text-left font-semibold;
+  }
+
+  .prose td {
+    @apply p-2 border border-zinc-300;
+  }
+}
+
+/* KaTeX formula styling */
+.katex-display {
+  @apply my-4 overflow-auto;
+}
