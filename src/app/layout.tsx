@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Noto_Serif, PT_Serif } from "next/font/google";
+import { Noto_Serif, PT_Serif } from "next/font/google";
+import localFont from 'next/font/local';
 import "./globals.css";
 import { aboutMe } from "@/data/aboutme";
 import { customMetadata } from "@/data/title-description";
@@ -10,8 +11,18 @@ import { customMetadata } from "@/data/title-description";
 import 'prismjs/themes/prism-tomorrow.css';
 
 // --- Font setup (keep as is) ---
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const geistSans = localFont({
+  src: './fonts/Geist-Regular.woff2', // Adjust path
+  variable: '--font-geist-sans',
+  display: 'swap',
+});
+
+const geistMono = localFont({
+  src: './fonts/GeistMono-Regular.woff2', // Adjust path
+  variable: '--font-geist-mono',
+  display: 'swap',
+});
+
 const notoSerif = Noto_Serif({ variable: "--font-noto-serif", subsets: ["latin"], weight: ["400", "700"] });
 const ptSerif = PT_Serif({ variable: "--font-pt-serif", subsets: ["latin"], weight: ["400", "700"] });
 

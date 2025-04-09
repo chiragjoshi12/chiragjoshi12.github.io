@@ -1,11 +1,10 @@
-// src/app/blog/[slug]/page.tsx
 import fs from 'fs/promises';
 import path from 'path';
 import matter from 'gray-matter';
-import React from 'react';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from 'next';
 
 // Import remark and necessary plugins for Markdown and KaTeX
 import { remark } from 'remark';
@@ -18,10 +17,6 @@ import rehypePrismPlus from 'rehype-prism-plus';
 // Import the ScrollToTopButton component
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 
-interface Props {
-  params: { [key: string]: string | string[] | undefined };
-}
-
 interface BlogPostData {
   slug: string;
   title: string;
@@ -31,6 +26,11 @@ interface BlogPostData {
   imageUrl?: string;
   tags?: string[];
   contentHtml: string;
+}
+
+// Define types for page props to satisfy ESLint
+interface PageParams {
+  params: { slug: string };
 }
 
 const POSTS_PATH = path.join(process.cwd(), 'src/blog-posts');
@@ -82,8 +82,10 @@ async function getPostData(slug: string): Promise<BlogPostData | undefined> {
   }
 }
 
-export async function generateMetadata({ params }: Props) {
-  const post = await getPostData(params.slug as string); // Cast params.slug
+// Using proper typing to avoid ESLint 'any' warnings
+export async function generateMetadata({ params }: PageParams): Promise<Metadata> {
+  const { slug } = params;
+  const post = await getPostData(slug);
 
   if (!post) {
     return { title: 'Post Not Found' };
@@ -92,10 +94,10 @@ export async function generateMetadata({ params }: Props) {
   return { title: post.title, description: post.description };
 }
 
-export default async function BlogPostPage({ params }: Props) {
-  const slug = params.slug as string;  //Cast params.slug
-
-  const post = await getPostData(slug);  // No casting needed here since slug is already string
+// Using proper typing to avoid ESLint 'any' warnings
+export default async function BlogPostPage({ params }: PageParams) {
+  const { slug } = params;
+  const post = await getPostData(slug);
 
   if (!post) {
     notFound(); // Trigger 404 if post data not found
@@ -136,8 +138,8 @@ export default async function BlogPostPage({ params }: Props) {
             <Image
               src={post.imageUrl}
               alt={`Featured image for ${post.title}`}
-              width={1200}  // Choose appropriate width
-              height={500}   // Choose appropriate height
+              width={1200}
+              height={500}
               className="rounded-xl w-full object-cover max-h-[500px] shadow-md"
               style={{ objectFit: 'cover', height: 'auto' }}
             />
