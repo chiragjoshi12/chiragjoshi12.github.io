@@ -6,7 +6,7 @@ import {
   Twitter,
   ArrowUpRight,
   GraduationCap,
-  SignalMedium
+  // SignalMedium  // Remove unsed import
 } from "lucide-react";
 import { AboutMe } from "@/data/aboutme";
 

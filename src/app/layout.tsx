@@ -4,7 +4,7 @@ import { Geist, Geist_Mono, Noto_Serif, PT_Serif } from "next/font/google";
 import "./globals.css";
 import { aboutMe } from "@/data/aboutme";
 import { customMetadata } from "@/data/title-description";
-import Link from "next/link"; // Import Link
+// import Link from "next/link"; // Import Link - Removed unused import
 
 //Import theme
 import 'prismjs/themes/prism-tomorrow.css';
