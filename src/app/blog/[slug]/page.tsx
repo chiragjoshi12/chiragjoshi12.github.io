@@ -73,9 +73,11 @@ async function getPostData(slug: string): Promise<BlogPostData | undefined> {
     };
     return postData;
 
-  } catch (error: any) {  // It's difficult to provide a precise type for `error` here. You could use `unknown` and do type narrowing.
-    if (error.code !== 'ENOENT') {
-      console.error(`[${slug}] Error reading or processing post:`, error);
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+      console.error(`[${slug}] Error reading or processing post:`, error.message);
+    } else {
+      console.error(`[${slug}] An unknown error occurred:`, error);
     }
     return undefined;
   }
@@ -199,7 +201,7 @@ export async function generateStaticParams() {
       .map((fileName) => ({
         slug: fileName.replace(/\.md$/, ''),
       }));
-  } catch (error) {
+  } catch (error: unknown) {
     console.error("Error reading post directory for generateStaticParams:", error);
     return [];
   }
