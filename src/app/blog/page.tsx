@@ -60,7 +60,7 @@ export default async function BlogIndexPage() {
     // <div className="min-h-screen bg-[#fefce8] text-black font-mono">
     <div className="min-h-screen text-black font-mono">
       <div className="px-8 py-10 max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Chirag's world</h1>
+        <h1 className="text-4xl font-bold mb-6">Chirag&#39;s World</h1>
 
         <nav className="flex gap-6 mb-6 text-lg">
           <Link href="/" className="underline decoration-red-500 underline-offset-4">
