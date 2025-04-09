@@ -9,15 +9,15 @@ tags:
   - Elevenlabs
 ---
 
-If you’re tech-savvy or active on Twitter, you’ve probably heard about **Google NotebookLM** — Google’s AI-powered research assistant. It can analyze uploaded documents (Google Docs, PDFs, and URLs) to generate summaries, answer questions, and create insights. One unique feature of NotebookLM is the ability to transform documents into deep-dive **conversational podcasts.**
+If you&#39;re tech-savvy or active on Twitter, you&#39;ve probably heard about **Google NotebookLM** — Google&#39;s AI-powered research assistant. It can analyze uploaded documents (Google Docs, PDFs, and URLs) to generate summaries, answer questions, and create insights. One unique feature of NotebookLM is the ability to transform documents into deep-dive **conversational podcasts.**
 
-In this guide, we’ll build **NotebookLM (PDF to podcast)** using **Gemini** for dialogue generation and **Elevenlabs** for text-to-speech. Let's dive right into it!
+In this guide, we&#39;ll build **NotebookLM (PDF to podcast)** using **Gemini** for dialogue generation and **Elevenlabs** for text-to-speech. Let&#39;s dive right into it!
 
 ## 1. Dialogue Generation Using Gemini
 
 ### Create Your Gemini API Key
 
-To start, we’ll need to create a **Gemini API key** from [Google AI Studio](https://aistudio.google.com/).
+To start, we&#39;ll need to create a **Gemini API key** from [Google AI Studio](https://aistudio.google.com/).
 
 1. Navigate to **Google AI Studio** and sign in or create an account.
 2. Once logged in, click on **Get API Key** to generate your API key.
@@ -28,7 +28,7 @@ Now, store this API key in your `.env` file as:
 GEMINI_API_KEY="YOUR_GEMINI_API_KEY"
 ```
 
-With this setup, we’re ready to integrate Gemini for dialogue generation.
+With this setup, we&#39;re ready to integrate Gemini for dialogue generation.
 
 In the `gemini.py` file of our project, we use the API key to call the Gemini API and create a conversation based on your PDF input. This is the first step in our process of converting PDFs into podcasts.
 
@@ -36,7 +36,7 @@ In the `gemini.py` file of our project, we use the API key to call the Gemini AP
 
 ### Why Elevenlabs?
 
-Elevenlabs offers over **3,000 voices** across **32 languages**, providing great flexibility in voice generation. Let’s use Elevenlabs to convert the generated dialogue from Gemini into realistic podcast audio.
+Elevenlabs offers over **3,000 voices** across **32 languages**, providing great flexibility in voice generation. Let&#39;s use Elevenlabs to convert the generated dialogue from Gemini into realistic podcast audio.
 
 ### Create Your Elevenlabs API Key
 
@@ -50,15 +50,15 @@ Set the `ELEVENLABS_API_KEY` in your `.env` file:
 ELEVENLABS_API_KEY="YOUR_ELEVENLABS_API_KEY"
 ```
 
-To ensure everything is working, you can test Elevenlabs’ Text-to-Speech API using the following curl command:
+To ensure everything is working, you can test Elevenlabs&#39; Text-to-Speech API using the following curl command:
 
 ```bash
 curl -X POST https://api.elevenlabs.io/v1/text-to-speech/<voice_id> \
      -H "xi-api-key: <apiKey>" \
      -H "Content-Type: application/json" \
-     -d '{
+     -d &#39;{
   "text": "text"
-}'
+}&#39;
 ```
 
 Replace `<voice_id>` and `<apiKey>` with your credentials.
@@ -75,14 +75,14 @@ Once you have the voice ID, you can specify which voice (male or female) you wan
 
 ## Putting It All Together
 
-Now that we’ve set up both **Gemini** for generating dialogue and **Elevenlabs** for converting the dialogue into speech, it’s time to integrate them.
+Now that we&#39;ve set up both **Gemini** for generating dialogue and **Elevenlabs** for converting the dialogue into speech, it&#39;s time to integrate them.
 
 The process works in two steps:
 
 1. **Dialogue Generation:** We use **Gemini** to analyze the PDF and create a conversational dialogue between two speakers (mentor and student).
 2. **Text-to-Speech:** We then use **Elevenlabs** to convert that dialogue into audio files, which you can listen to as a podcast.
 
-Let’s start Project Installation:
+Let&#39;s start Project Installation:
 
 ### Project Installation
 
