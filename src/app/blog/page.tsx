@@ -58,18 +58,28 @@ export default async function BlogIndexPage() {
 
   return (
     // <div className="min-h-screen bg-[#fefce8] text-black font-mono">
-    <div className="min-h-screen text-black font-mono">
-      <div className="px-8 py-10 max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Chirag&#39;s World</h1>
-
-        <nav className="flex gap-6 mb-6 text-lg">
+    <div className="min-h-screen text-black font-sans">
+      <div className="px-6 py-12 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">Chirag's World</h1>
+        
+        <nav className="flex gap-6 mb-10 text-lg">
           <Link href="/" className="underline decoration-red-500 underline-offset-4">
             Home
           </Link>
           <span className="underline decoration-red-500 underline-offset-4 font-bold">
             Blog
           </span>
+          <Link href="/books" className="underline decoration-red-500 underline-offset-4">
+            Books
+          </Link>
         </nav>
+
+        <p className="text-xl mb-12">
+          I write about what I’m learning, building, or thinking about. Some posts are{" "}
+          <span className="text-blue-600">useful</span>. Some are{" "}
+          <span className="text-green-600">raw thoughts</span>. All are{" "}
+          <span className="text-red-500">honest</span>.
+        </p>
 
         <hr className="border-t border-black border-dotted mb-8" />
 

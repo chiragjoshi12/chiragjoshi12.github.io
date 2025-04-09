@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'chiragjoshi12.github.io',
       },
+      {
+        protocol: 'https',
+        hostname: 'via.placeholder.com',
+      },
     ],
   },
 };
