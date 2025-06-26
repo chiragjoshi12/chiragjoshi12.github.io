@@ -2,7 +2,7 @@
 export interface Book {
   title: string;
   author: string;
-  link?: string;
+  url?: string; // Optional: A URL for purchasing the book or for more info
   highlight?: "normal" | "great" | "remarkable";
 }
 
@@ -18,7 +18,8 @@ export const booksByYear: BooksByYear[] = [
       {
         title: "Elon Musk",
         author: "Ashlee Vance",
-        highlight: "remarkable"
+        highlight: "remarkable",
+        url: "https://www.amazon.com/Elon-Musk-Tesla-SpaceX-Fantastic/dp/0062301233"
       }
     ]
   },
@@ -28,7 +29,8 @@ export const booksByYear: BooksByYear[] = [
       {
         title: "Steve Jobs",
         author: "Walter Isaacson",
-        highlight: "great"
+        highlight: "great",
+        url: "https://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"
       },
       {
         title: "Sapiens",

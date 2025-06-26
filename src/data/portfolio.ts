@@ -31,4 +31,12 @@ export const portfolioData: Portfolio[] = [
       "https://web.edutorapp.com/_next/static/media/default_prompt_icon.e666cb16.png",
     blogUrl: "https://chirag-ai.medium.com/notebooklm-with-gemini-and-elevenlabs-detailed-documentation-b8db6739ba9b",
   },
+  {
+    title: "RoastFolio",
+    description:
+      "Your Portfolio Roaster - analyzes your portfolio and gives you a brutally honest (but fun) recap.",
+    technologies: ["Python", "TypeScript", "Gemini"],
+    projectUrl: "https://roastfolio.vercel.app/",
+    imageUrl: "https://roastfolio.vercel.app/favicon.ico",
+  },
 ];

@@ -7,9 +7,6 @@ import { aboutMe } from "@/data/aboutme";
 import { customMetadata } from "@/data/title-description";
 import Link from "next/link";
 
-//Import theme
-import 'prismjs/themes/prism-tomorrow.css';
-
 // --- Font setup (keep as is) ---
 const geistSans = localFont({
   src: './fonts/Geist-Regular.woff2', // Adjust path

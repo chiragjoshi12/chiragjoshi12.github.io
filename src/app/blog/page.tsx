@@ -1,63 +1,27 @@
 // src/app/blog/page.tsx
 
-import fs from 'fs/promises';
-import path from 'path';
-import matter from 'gray-matter';
 import Link from 'next/link';
+import { blogData } from '@/data/blog'; // Import your new blog data
 
-interface BlogPostPreview {
-  slug: string;
-  title: string;
-  date: Date;
-}
-
-const POSTS_PATH = path.join(process.cwd(), 'src/blog-posts');
-
-async function getAllPostPreviews(): Promise<BlogPostPreview[]> {
-  const fileNames = await fs.readdir(POSTS_PATH);
-
-  const posts = await Promise.all(
-    fileNames
-      .filter(fileName => fileName.endsWith('.md'))
-      .map(async (fileName) => {
-        const filePath = path.join(POSTS_PATH, fileName);
-        const fileContents = await fs.readFile(filePath, 'utf8');
-        const { data } = matter(fileContents);
-
-        if (!data.title || !data.date) return null;
-
-        const slug = fileName.replace(/\.md$/, '');
-
-        return {
-          slug,
-          title: data.title,
-          date: new Date(data.date),
-        };
-      })
-  );
-
-  return posts
-    .filter((post): post is BlogPostPreview => post !== null)
-    .sort((a, b) => b.date.getTime() - a.date.getTime());
-}
-
-function formatDate(date: Date): string {
-  const day = date.getDate().toString().padStart(2, '0');
-  const month = date.toLocaleString('en-US', { month: 'short' });
-  const year = date.getFullYear();
+// Helper function to format the date string
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  const day = date.getUTCDate().toString().padStart(2, '0');
+  const month = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
+  const year = date.getUTCFullYear();
   return `${day} ${month}, ${year}`;
 }
 
 export const metadata = {
   title: "Blog",
-  description: "Blog posts",
+  description: "Blog posts by Chirag Joshi",
 };
 
-export default async function BlogIndexPage() {
-  const posts = await getAllPostPreviews();
+export default function BlogIndexPage() {
+  // Sort posts by date in descending order
+  const posts = blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    // <div className="min-h-screen bg-[#fefce8] text-black font-mono">
     <div className="min-h-screen text-black font-sans">
       <div className="px-6 py-12 max-w-3xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Chirag's World</h1>
@@ -75,23 +39,21 @@ export default async function BlogIndexPage() {
         </nav>
 
         <p className="text-xl mb-12">
-          I write about what I’m learning, building, or thinking about. Some posts are{" "}
-          <span className="text-blue-600">useful</span>. Some are{" "}
-          <span className="text-green-600">raw thoughts</span>. All are{" "}
-          <span className="text-red-500">honest</span>.
+          I write about what I'm learning, building, or thinking.
         </p>
 
         <hr className="border-t border-black border-dotted mb-8" />
 
         <div className="space-y-5">
           {posts.map((post) => (
-            <div key={post.slug} className="flex gap-6 items-baseline">
+            <div key={post.title} className="flex gap-6 items-baseline">
               <span className="w-32 text-gray-500">{formatDate(post.date)}</span>
-              <Link href={`/blog/${post.slug}`}>
+              {/* This is the key change: an <a> tag opening in a new tab */}
+              <a href={post.url} target="_blank" rel="noopener noreferrer">
                 <span className="border-b-4 border-red-500 pb-1 hover:text-gray-700 transition-colors">
                   {post.title}
                 </span>
-              </Link>
+              </a>
             </div>
           ))}
         </div>

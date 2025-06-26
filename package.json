@@ -9,21 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "fs.promises": "^0.1.2",
-    "gray-matter": "^4.0.3",
     "lucide-react": "^0.469.0",
     "next": "^14.2.28",
-    "prismjs": "^1.30.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rehype-katex": "^7.0.1",
-    "rehype-prism-plus": "^2.0.1",
-    "rehype-react": "^8.0.0",
-    "rehype-stringify": "^10.0.1",
-    "remark": "^15.0.1",
-    "remark-html": "^16.0.1",
-    "remark-math": "^6.0.0",
-    "remark-rehype": "^11.1.2"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -1,10 +1,10 @@
 // src/components/bookshelf.tsx
-import Link from "next/link";
+// The unused 'Link' import has been removed.
 
 interface Book {
   title: string;
   author: string;
-  link?: string;
+  url?: string; // A URL for purchasing the book or for more info
   highlight?: "normal" | "great" | "remarkable";
 }
 
@@ -37,18 +37,19 @@ export function Bookshelf({ booksByYear }: BookshelfProps) {
           <h2 className="text-4xl font-bold text-zinc-800 mb-6">{yearData.year}</h2>
           <ul className="list-disc pl-8 space-y-3">
             {yearData.books.map((book, bookIndex) => (
-              <li key={bookIndex} className="text-lg">
-                {book.link ? (
-                  <Link 
-                    href={book.link} 
-                    className={`${getHighlightColor(book.highlight)} hover:underline`}
+              <li key={bookIndex} className={`text-lg ${getHighlightColor(book.highlight)}`}>
+                {book.url ? (
+                  <a
+                    href={book.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:underline" // Underline on hover for better UX
                   >
-                    {book.title}
-                  </Link>
+                    {`${book.title} by ${book.author}`}
+                  </a>
                 ) : (
-                  <span className={getHighlightColor(book.highlight)}>{book.title}</span>
+                  <span>{`${book.title} by ${book.author}`}</span>
                 )}
-                {" by " + book.author}
               </li>
             ))}
           </ul>
