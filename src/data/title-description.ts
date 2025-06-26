@@ -1,10 +1,10 @@
+// src/data/title-description.ts
 export interface CustomMetadata {
   title?: string;
   description?: string;
 }
 
 export const customMetadata: CustomMetadata = {
-  // If you want a custom title or description you can add it here.
-  // title: "My Custom Title",
-  // description: "My Custom Description",
+  title: "Chirag Joshi | AI Engineer & Builder",
+  description: "Personal website of Chirag Joshi, a 15-year-old AI Engineer building an Agentic OS for Education at EdutorApp. Discover my projects, blog, and what I'm learning.",
 };

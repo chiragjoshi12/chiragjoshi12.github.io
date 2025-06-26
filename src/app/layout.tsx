@@ -30,6 +30,26 @@ export const metadata: Metadata = {
   icons: { icon: "https://i.ibb.co/JWR3wbBD/favicon-1.jpg" },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: aboutMe.name,
+  url: 'https://chiragjoshi12.github.io',
+  image: aboutMe.imageUrl,
+  jobTitle: aboutMe.title,
+  worksFor: {
+    '@type': 'Organization',
+    name: aboutMe.institution,
+  },
+  email: aboutMe.email,
+  sameAs: [
+    `https://github.com/${aboutMe.githubUsername}`,
+    `https://www.linkedin.com/in/${aboutMe.linkedinUsername}`,
+    `https://twitter.com/${aboutMe.twitterUsername}`,
+    aboutMe.institutionUrl,
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -40,7 +60,10 @@ export default function RootLayout({
       <head>
          {/* ADD THIS LINE FOR KATEX STYLES */}
          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1tBCETVFN/4gFh6zSOXP4CvvrSay" crossOrigin="anonymous" />
-         {/* You might have other meta tags or links here already */}
+         <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${notoSerif.variable} ${ptSerif.variable} antialiased`}
