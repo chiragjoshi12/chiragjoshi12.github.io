@@ -18,9 +18,14 @@ export const booksByYear: BooksByYear[] = [
       {
         title: "Elon Musk",
         author: "Ashlee Vance",
-        highlight: "remarkable",
+        highlight: "normal",
         url: "https://www.amazon.com/Elon-Musk-Tesla-SpaceX-Fantastic/dp/0062301233"
-      }
+      },
+      {
+        title: "The Alchemist",
+        author: "Paulo Coelho",
+        highlight: "normal",
+      },
     ]
   },
   {
@@ -29,7 +34,7 @@ export const booksByYear: BooksByYear[] = [
       {
         title: "Steve Jobs",
         author: "Walter Isaacson",
-        highlight: "great",
+        highlight: "remarkable",
         url: "https://www.amazon.com/Steve-Jobs-Walter-Isaacson/dp/1451648537"
       },
       {
@@ -40,7 +45,7 @@ export const booksByYear: BooksByYear[] = [
       {
         title: "Charlie Chaplin",
         author: "Charlie Chaplin",
-        highlight: "remarkable"
+        highlight: "great"
       },
       {
         title: "સરદાર એટલે સરદાર",
@@ -60,6 +65,11 @@ export const booksByYear: BooksByYear[] = [
       {
         title: "Dollar Bahu",
         author: "Sudha Murthy",
+        highlight: "normal"
+      },
+      {
+        title: "The Man Who Knew Infinity : A Life of the Genius Ramanujan (Gujarati)",
+        author: "Robert Kanigel",
         highlight: "normal"
       }
     ]
