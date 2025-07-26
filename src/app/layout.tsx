@@ -59,7 +59,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
          {/* ADD THIS LINE FOR KATEX STYLES */}
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1tBCETVFN/4gFh6zSOXP4CvvrSay" crossOrigin="anonymous" />
+         {/* <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1tBCETVFN/4gFh6zSOXP4CvvrSay" crossOrigin="anonymous" /> */}
          <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

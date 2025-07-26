@@ -99,3 +99,41 @@ body {
 .katex-display {
   @apply my-4 overflow-auto;
 }
+
+/* At the end of src/app/globals.css */
+
+/* Masonry Photo Gallery Styles */
+.masonry-gallery {
+  column-count: 1;
+  column-gap: 1.5rem; /* 24px */
+}
+
+@media (min-width: 640px) { /* sm */
+  .masonry-gallery {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 1024px) { /* lg */
+  .masonry-gallery {
+    column-count: 3;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1.5rem; /* 24px */
+  position: relative;
+  overflow: hidden; /* To contain the caption overlay */
+  border-radius: 0.5rem; /* 8px */
+}
+
+.masonry-item img {
+  filter: grayscale(50%);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.masonry-item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}

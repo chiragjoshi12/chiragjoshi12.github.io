@@ -22,25 +22,21 @@ export default function BlogIndexPage() {
   const posts = blogData.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return (
-    <div className="min-h-screen text-black font-sans">
-      <div className="px-6 py-12 max-w-3xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Chirag's World</h1>
-        
-        <nav className="flex gap-6 mb-10 text-lg">
-          <Link href="/" className="underline decoration-red-500 underline-offset-4">
-            Home
-          </Link>
-          <span className="underline decoration-red-500 underline-offset-4 font-bold">
-            Blog
-          </span>
-          <Link href="/books" className="underline decoration-red-500 underline-offset-4">
-            Books
-          </Link>
-        </nav>
+    <div className="min-h-screen text-black font-sans bg-[#FFFCF8]">
+      <div className="px-4 py-12 max-w-6xl mx-auto">
+        <header className="text-center max-w-2xl mx-auto">
+            <h1 className="text-4xl font-bold mb-4">Chirag's World</h1>
+            <nav className="flex gap-6 mb-8 text-lg justify-center">
+              <Link href="/" className="hover:text-red-500 transition-colors">Home</Link>
+              <Link href="/blog" className="text-red-500 font-bold border-b-2 border-red-500">Blog</Link>
+              <Link href="/books" className="hover:text-red-500 transition-colors">Books</Link>
+              <Link href="/moments" className="hover:text-red-500 transition-colors">Moments 📸</Link>
+            </nav>
 
-        <p className="text-xl mb-12">
-          I write about what I'm learning, building, or thinking.
-        </p>
+            <p className="text-xl mb-12">
+              I write about what I'm learning, building, or thinking.
+            </p>
+        </header>
 
         <hr className="border-t border-black border-dotted mb-8" />
 

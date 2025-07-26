@@ -7,12 +7,13 @@ export interface AboutMe {
   imageUrl?: string;
   blogUrl?: string;
   bookShelf?: string;
+  momentsUrl?: string;
   googleScholarUrl?: string;
   twitterUsername?: string;
   githubUsername?: string;
   linkedinUsername?: string;
-  funDescription?: string; // Gets placed in the left sidebar
-  secretDescription?: string; // Gets placed in the bottom
+  funDescription?: string;
+  secretDescription?: string;
   altName?: string;
   institutionUrl?: string;
 }
@@ -31,6 +32,7 @@ export const aboutMe: AboutMe = {
   twitterUsername: "Chiragjoshi_12",
   blogUrl: "/blog",
   bookShelf: "/books",
+  momentsUrl: "/moments",
   institutionUrl: "https://edutorapp.com/",
   // altName: "Chirkut",
   secretDescription: "I like badminton.",

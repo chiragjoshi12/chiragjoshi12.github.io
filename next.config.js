@@ -26,6 +26,18 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'roastfolio.vercel.app',
       },
+      {
+        protocol: 'https',
+        hostname: 'hips.hearstapps.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.kumareth.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'pbs.twimg.com',
+      },
     ],
   },
 };
