@@ -90,13 +90,13 @@ export const momentsData: Moment[] = [
     caption: "exploring...",
   },
   {
-    src: "https://i.ibb.co/W4dn6vLv/Whats-App-Image-2025-07-30-at-21-45-02.jpg",
+    src: "https://scontent.cdninstagram.com/v/t51.82787-15/527364686_18073903379476027_5717843820422043966_n.webp?_nc_cat=104&ig_cache_key=MzY5MDE5MjMyNDkxOTMwNTY3NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTA4MS5zZHIuQzMifQ%3D%3D&_nc_ohc=XbOvMC3Lw5EQ7kNvwHvtU31&_nc_oc=Adlica1a0pIgQHZ1xsPnOBcjynP15gdIJ9YPltEPZrb5bZAUNL8EMWcgbUHUyzbyLwJ2gjpUuBAVmQiBqvc_jN9k&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=ezc6mpjIMfSu2NTh2Cua_Q&oh=00_Afh2_xzyHt5Fhw3wekW7vWzcm2lxL3YswFMJlv49-SLw2w&oe=69253F56",
     width: 1000,
     height: 1000,
     caption: "Skyline of Shanghai",
   },
   {
-    src: "https://i.ibb.co/Kpw5T1Tt/518384056-2120089088396475-5334890300025942308-n.jpg",
+    src: "https://scontent.cdninstagram.com/v/t51.82787-15/521958563_18360529984149357_1071793514775480617_n.jpg?stp=dst-jpegr_e35_tt6&_nc_cat=105&ig_cache_key=MzY4MTQwNzgyNTIxNTE4ODMzNQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4MTA4MS5oZHIuQzMifQ%3D%3D&_nc_ohc=FeGbhzGtWOsQ7kNvwEbQ7Ml&_nc_oc=AdlJ8eKaHWtROHQ_IauEUg1uiYSXEdSeAlMdGABwKgdUOFtLLLHlYpgS5F4b37C_jTE_eJ7qufma2Yv8kPNz3VzH&_nc_ad=z-m&_nc_cid=2034&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=Son8zx1cGugeCK76lD79Lg&oh=00_AfhJAo-y1uKfXh7BgcQPupErv9Bg8R1kK_j-GApYV3dr1Q&oe=6925402B",
     width: 1000,
     height: 1000,
     caption: "hmmmm",
