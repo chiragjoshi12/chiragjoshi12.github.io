@@ -28,6 +28,7 @@ export default function BlogIndexPage() {
             <h1 className="text-4xl font-bold mb-4">Chirag's World</h1>
             <nav className="flex gap-6 mb-8 text-lg justify-center">
               <Link href="/" className="hover:text-red-500 transition-colors">Home</Link>
+              <Link href="/activities" className="hover:text-red-500 transition-colors">Activities</Link>
               <Link href="/blog" className="text-red-500 font-bold border-b-2 border-red-500">Blog</Link>
               <Link href="/books" className="hover:text-red-500 transition-colors">Books</Link>
               <Link href="/moments" className="hover:text-red-500 transition-colors">Moments 📸</Link>

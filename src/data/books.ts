@@ -16,6 +16,18 @@ export const booksByYear: BooksByYear[] = [
     year: "2025",
     books: [
       {
+        title: "Mahotu (Gujarati)",
+        author: "Raam Mori",
+        highlight: "normal",
+        url: ""
+      },
+      {
+        title: "One Indian Girl",
+        author: "Chetan Bhagat",
+        highlight: "normal",
+        url: ""
+      },
+      {
         title: "Elon Musk",
         author: "Ashlee Vance",
         highlight: "normal",

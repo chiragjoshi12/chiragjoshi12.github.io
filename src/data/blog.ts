@@ -9,10 +9,34 @@ export interface BlogPost {
 
 export const blogData: BlogPost[] = [
   {
+    title: "My Observations about China",
+    date: "2025-09-02",
+    url: "https://chirag-ai.medium.com/my-observations-about-china-chirag-joshi-4f1280fd5e63",
+    description: "My Observations about China",
+  },
+  {
+    title: "કુદરત + આધુનિકતા = વધુ સુંદરતા",
+    date: "2025-08-11",
+    url: "https://chirag-ai.medium.com/%E0%AA%95%E0%AB%81%E0%AA%A6%E0%AA%B0%E0%AA%A4-%E0%AA%86%E0%AA%A7%E0%AB%81%E0%AA%A8%E0%AA%BF%E0%AA%95%E0%AA%A4%E0%AA%BE-%E0%AA%B5%E0%AA%A7%E0%AB%81-%E0%AA%B8%E0%AB%81%E0%AA%82%E0%AA%A6%E0%AA%B0%E0%AA%A4%E0%AA%BE-3f243067175b",
+    description: "કુદરત + આધુનિકતા = વધુ સુંદરતા",
+  },
+  {
+    title: "A strong experience in Shanghai (Gujarati)",
+    date: "2025-08-06",
+    url: "https://chirag-ai.medium.com/a-strong-experience-in-shanghai-gujarati-dd111c40eaa3",
+    description: "A strong experience in Shanghai (Gujarati)",
+  },
+  {
+    title: "ચિન : એક લોંગ સ્ટોરી",
+    date: "2025-08-03",
+    url: "https://chirag-ai.medium.com/%E0%AA%9A%E0%AA%BF%E0%AA%A8-%E0%AA%8F%E0%AA%95-%E0%AA%B2%E0%AB%8B%E0%AA%82%E0%AA%97-%E0%AA%B8%E0%AB%8D%E0%AA%9F%E0%AB%8B%E0%AA%B0%E0%AB%80-751bfea74715",
+    description: "ચિન : એક લોંગ સ્ટોરી",
+  },
+  {
     title: "આજના વિદ્યાર્થીઓને મારે કહેવું છે...",
     date: "2025-06-24",
     url: "https://chirag-ai.medium.com/%E0%AA%86%E0%AA%9C%E0%AA%A8%E0%AA%BE-%E0%AA%B5%E0%AA%BF%E0%AA%A6%E0%AB%8D%E0%AA%AF%E0%AA%BE%E0%AA%B0%E0%AB%8D%E0%AA%A5%E0%AB%80%E0%AA%93%E0%AA%A8%E0%AB%87-%E0%AA%AE%E0%AA%BE%E0%AA%B0%E0%AB%87-%E0%AA%95%E0%AA%B9%E0%AB%87%E0%AA%B5%E0%AB%81%E0%AA%82-%E0%AA%9B%E0%AB%87-cebfaa5f995f",
-    description: "Turn PDFs into podcasts using AI! This guide shows how to use Gemini for dialogue generation and ElevenLabs for voice to create conversational audio from documents.",
+    description: "આજના વિદ્યાર્થીઓને મારે કહેવું છે...",
   },
   {
     title: "નવા નદીસર પ્રાથમિક શાળા — એક આઇડિયલ સ્કૂલ 🏫",

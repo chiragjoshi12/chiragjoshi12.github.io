@@ -23,7 +23,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
     <div className="md:sticky top-12 flex flex-row-reverse md:flex-col gap-4 md:space-y-8">
       {aboutMe.imageUrl && (
         <div className="w-1/3 md:w-full flex-shrink-0">
-          <div className="relative max-h-[45vh] md:w-[65%] aspect-[3/4]">
+          <div className="relative max-h-[45vh] md:w-[85%] aspect-[3/4]">
             <Image
               src={aboutMe.imageUrl}
               alt={aboutMe.name}
@@ -59,7 +59,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
             aboutMe.institution
           )}
         </p>
-        <div className="flex gap-6 mb-6">
+        {/* <div className="flex gap-6 mb-6">
           {aboutMe.blogUrl && (
             <a
               href={aboutMe.blogUrl}
@@ -96,7 +96,7 @@ export function ProfileSection({ aboutMe }: ProfileSectionProps) {
               <span className="tracking-wider uppercase">Moments 📸</span>
             </a>
           )}
-        </div>
+        </div> */}
         <div className="space-y-2">
           <a
             href={`mailto:${aboutMe.email}`}

@@ -11,12 +11,60 @@ import { experienceData } from "@/data/experience";
 import { PortfolioEntry } from "@/components/portfolio-entry";
 import { portfolioData } from "@/data/portfolio";
 import { sectionOrder, Section } from "@/data/section-order";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
-      {/* Don't have a great call on whether max-w-screen-xl is better */}
       <div className="max-w-screen-lg mx-auto px-8 pt-12 pb-24">
+        {/* START: New Centered Header */}
+        <header className="text-center mb-16">
+          {/* <h1 className="font-serif text-4xl font-bold text-zinc-800 mb-4">
+            {aboutMe.name}
+          </h1> */}
+          <nav className="flex justify-center gap-6 text-lg">
+            <Link
+              href="/"
+              className="text-zinc-600 hover:text-zinc-900 transition-colors"
+            >
+              Home
+            </Link>
+            {aboutMe.activitiesUrl && (
+              <Link
+                href={aboutMe.activitiesUrl}
+                className="text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                Activities
+              </Link>
+            )}
+            {aboutMe.blogUrl && (
+              <Link
+                href={aboutMe.blogUrl}
+                className="text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                Blog
+              </Link>
+            )}
+            {aboutMe.bookShelf && (
+              <Link
+                href={aboutMe.bookShelf}
+                className="text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                Books
+              </Link>
+            )}
+            {aboutMe.momentsUrl && (
+              <Link
+                href={aboutMe.momentsUrl}
+                className="text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                Moments 📸
+              </Link>
+            )}
+          </nav>
+        </header>
+        {/* END: New Centered Header */}
+
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
           {/* Left Column - Fixed Info */}
