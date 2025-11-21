@@ -10,18 +10,19 @@ export function PublicationEntry({
   return (
     <div className="flex flex-col sm:flex-row gap-6">
       {publication.imageUrl && (
-        <div className="w-full sm:w-1/4 min-w-[160px] relative">
+        // RESPONSIVE FIX: w-full on mobile, w-1/4 on desktop
+        <div className="w-full sm:w-1/4 sm:min-w-[160px] relative">
           <Image
             src={publication.imageUrl}
             alt={publication.title}
-            width={160}
+            width={300}
             height={200}
-            className="rounded-lg transition-all duration-300"
+            className="rounded-lg transition-all duration-300 w-full h-auto object-cover"
           />
         </div>
       )}
       <div className="flex flex-col flex-1">
-        <div className="flex flex-row gap-4 items-center mb-2">
+        <div className="flex flex-wrap gap-4 items-center mb-2">
           <p className="text-xs text-zinc-500">
             {publication.conference} {publication.year}
           </p>
@@ -36,7 +37,7 @@ export function PublicationEntry({
         </div>
         <h3 className="font-serif text-md mb-3">{publication.title}</h3>
         <p className="text-sm text-zinc-600 mb-4">{publication.authors}</p>
-        <div className="flex flex-row gap-6">
+        <div className="flex flex-wrap gap-6">
           {publication.paperUrl && (
             <a
               href={publication.paperUrl}

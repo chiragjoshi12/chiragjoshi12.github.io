@@ -16,13 +16,12 @@ import Link from "next/link";
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#FFFCF8]">
-      <div className="max-w-screen-lg mx-auto px-8 pt-12 pb-24">
+      {/* RESPONSIVE FIX: px-4 for mobile, px-8 for desktop. pt-6 for mobile. */}
+      <div className="max-w-screen-lg mx-auto px-4 md:px-8 pt-6 md:pt-12 pb-24">
         {/* START: New Centered Header */}
-        <header className="text-center mb-16">
-          {/* <h1 className="font-serif text-4xl font-bold text-zinc-800 mb-4">
-            {aboutMe.name}
-          </h1> */}
-          <nav className="flex justify-center gap-6 text-lg">
+        <header className="text-center mb-8">
+          {/* RESPONSIVE FIX: Added flex-wrap so links don't overflow off screen */}
+          <nav className="flex flex-wrap justify-center gap-4 md:gap-6 text-base md:text-lg">
             <Link
               href="/"
               className="text-zinc-600 hover:text-zinc-900 transition-colors"
@@ -68,7 +67,7 @@ export default function Home() {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-2">
           {/* Left Column - Fixed Info */}
-          <div className="col-span-12 md:col-span-4 space-y-12 mb-8 md:mb-0">
+          <div className="col-span-12 md:col-span-4 space-y-12 mb-12 md:mb-0">
             {/* Profile */}
             <div className="md:sticky top-12 space-y-8">
               <ProfileSection aboutMe={aboutMe} />
@@ -81,7 +80,7 @@ export default function Home() {
             {aboutMe.description && (
               <section>
                 <p
-                  className="font-serif text-[17px] leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
+                  className="font-serif text-base md:text-[17px] leading-relaxed text-zinc-700 [&_a]:underline [&_a]:text-zinc-900 [&_a:hover]:text-zinc-600"
                   dangerouslySetInnerHTML={{ __html: aboutMe.description }}
                 />
               </section>
@@ -89,16 +88,15 @@ export default function Home() {
 
             {/* Map through sectionOrder to render sections in correct order */}
             {sectionOrder.map((sectionName) => {
-              // Most of this is redundant... but in case it needs to be unique.
               switch (sectionName) {
                 case Section.News:
                   return (
                     newsData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-l mb-8 md:mb-12 tracking-wide uppercase">
                           News
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {newsData.map((news, index) => (
                             <div key={index}>
                               <NewsEntry news={news} />
@@ -112,10 +110,10 @@ export default function Home() {
                   return (
                     educationData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-zinc-700 mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-zinc-700 mb-8 md:mb-12 tracking-wide uppercase">
                           Education
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {educationData.map((education, index) => (
                             <EducationEntry key={index} education={education} />
                           ))}
@@ -127,10 +125,10 @@ export default function Home() {
                   return (
                     publicationData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-l mb-12 tracking-wide uppercase">
+                        <h2 className="font-serif text-l mb-8 md:mb-12 tracking-wide uppercase">
                           Publications
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {publicationData.map((publication, index) => (
                             <div key={index}>
                               <PublicationEntry publication={publication} />
@@ -147,10 +145,10 @@ export default function Home() {
                   return (
                     experienceData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase font-bold">
+                        <h2 className="font-serif text-md mb-8 md:mb-12 tracking-wide uppercase font-bold">
                           Experience
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {experienceData.map((experience, index) => (
                             <ExperienceEntry
                               key={index}
@@ -165,10 +163,10 @@ export default function Home() {
                   return (
                     portfolioData.length > 0 && (
                       <section key={sectionName}>
-                        <h2 className="font-serif text-md mb-12 tracking-wide uppercase font-bold">
+                        <h2 className="font-serif text-md mb-8 md:mb-12 tracking-wide uppercase font-bold">
                           Projects
                         </h2>
-                        <div className="space-y-12">
+                        <div className="space-y-8 md:space-y-12">
                           {portfolioData.map((portfolio, index) => (
                             <PortfolioEntry key={index} portfolio={portfolio} />
                           ))}

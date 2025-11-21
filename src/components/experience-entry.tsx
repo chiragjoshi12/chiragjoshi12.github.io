@@ -2,8 +2,9 @@ import { Experience } from "@/data/experience";
 
 export function ExperienceEntry({ experience }: { experience: Experience }) {
   return (
-    <div className="grid grid-cols-4 gap-x-2">
-      <span className="text-xs text-zinc-500 mt-1">{experience.date}</span>
+    // RESPONSIVE FIX: Flex column on mobile, Grid on desktop (md)
+    <div className="flex flex-col md:grid md:grid-cols-4 gap-x-2">
+      <span className="text-xs text-zinc-500 mb-2 md:mb-0 md:mt-1">{experience.date}</span>
       <div className="col-span-3 flex flex-col">
         <h3 className="text-base font-serif">
           {experience.title} —{" "}

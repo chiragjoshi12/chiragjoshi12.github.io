@@ -5,6 +5,6 @@ export interface CustomMetadata {
 }
 
 export const customMetadata: CustomMetadata = {
-  title: "Chirag Joshi | AI Engineer & Builder",
-  description: "Personal website of Chirag Joshi, a 15-year-old AI Engineer building an Agentic OS for Education at EdutorApp. Discover my projects, blog, and what I'm learning.",
+  title: "Chirag Joshi",
+  description: "Discover my projects, blog, and what I'm learning.",
 };
