@@ -12,7 +12,15 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        // Using Verdana for sans, but falling back to system fonts
+        sans: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+        // Using Georgia for that "paper" feel on headings
+        serif: ['Verdana', 'Geneva', 'Tahoma', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 } satisfies Config;
